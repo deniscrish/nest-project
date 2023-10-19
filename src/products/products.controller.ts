@@ -15,23 +15,11 @@ import { UpdateProductDto } from './dto/update-product.dto';
 import { ProductsService } from './products.service';
 import { Product } from './schemas/product.schema';
 
-// express
-// app.use((req, res, next) => {
-//   res.status(201).end('Poka')
-// })
-
 @Controller('products')
 export class ProductsController {
 
   constructor(private readonly productsService: ProductsService) {
   }
-
-  // @Get()
-  // // @Redirect('https://google.com', 301)
-  // getAll(@Req() req: Request, @Res() res: Response): string {
-  //   res.status(201).end('Poke')
-  //   return 'getAll'
-  // }
 
   @Get()
   getAll(): Promise<Product[]> {
